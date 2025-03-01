@@ -15,7 +15,7 @@ public class Quasistasic extends Command {
   }
 
   public void enable(Direction direction) {
-    this.drivetrain.sysIdQuasistatic(direction);
+    //this.drivetrain.sysIdQuasistatic(direction);
   }
 
   @Override

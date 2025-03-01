@@ -5,21 +5,15 @@ import frc.core.util.TrajectoryBuilder;
 import frc.robot.buttonBindings.DriverButtonBindings;
 import frc.robot.buttonBindings.OperatorButtonBindings;
 import frc.robot.commands.autonomous.AutoTeste;
-import frc.robot.subsystems.AlgaeIntakeOuttake;
-import frc.robot.subsystems.Climber;
-import frc.robot.subsystems.CoralIntakeOuttake;
 import frc.robot.subsystems.Drivetrain;
-import frc.robot.subsystems.GenericSubsystem;
-import frc.robot.subsystems.IntakeJoint;
-import frc.robot.subsystems.Lift;
+import frc.robot.subsystems.Intake;
+import frc.robot.subsystems.Shooter;
 
 public class RobotContainer {
   private final Drivetrain drivetrain;
-  private final Lift lift;
-  private final IntakeJoint intakeJoint;
-  private final CoralIntakeOuttake coralIntakeOuttake;
-  private final AlgaeIntakeOuttake algaeIntakeOuttake;
-  private final Climber climber;
+  private final Intake intake;
+  private final Shooter shooter;
+  
   //private final GenericSubsystem genericSubsystem;
 
   public TrajectoryBuilder trajectoryBuilder;
@@ -29,14 +23,12 @@ public class RobotContainer {
 
   public RobotContainer() {
     this.drivetrain = new Drivetrain();
-    this.lift = new Lift();
-    this.algaeIntakeOuttake = new AlgaeIntakeOuttake();
-    this.coralIntakeOuttake = new CoralIntakeOuttake();
-    this.intakeJoint = new IntakeJoint();
-    this.climber = new Climber();
     //this.genericSubsystem = new GenericSubsystem();
 
-    this.driver = new DriverButtonBindings(this.drivetrain, lift, climber, coralIntakeOuttake, algaeIntakeOuttake, intakeJoint);
+    this.intake = new Intake();
+    this.shooter = new Shooter();
+
+    this.driver = new DriverButtonBindings(this.drivetrain, this.intake, this.shooter);
     this.operator = new OperatorButtonBindings(this.drivetrain);
 
 
@@ -50,10 +42,6 @@ public class RobotContainer {
 
   private void configureButtonBindings() {
     this.driver.buttonBindingsDrivetain();
-    this.driver.buttonBindingsLift();
-    this.driver.buttonBindingsClimber();
-    this.driver.buttonBindingsCoralIntakeOuttake();
-    this.driver.buttonBindingsAlgaeIntakeOuttake();
     // this.driver.buttonBindingsSysId();
   }
 

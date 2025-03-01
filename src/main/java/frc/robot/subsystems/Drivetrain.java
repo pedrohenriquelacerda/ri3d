@@ -79,8 +79,8 @@ public class Drivetrain extends SubsystemBase {
     this.resetEncoders();
 
     if (DrivetrainConstants.SysId.isSysIdTunning) {
-      sysIdTunning = new DrivetrainSysIdTuning(this);
-      sysIdTunning.enable();
+      //sysIdTunning = new DrivetrainSysIdTuning(this);
+      //sysIdTunning.enable();
     } else {
       sysIdTunning = null;
     }
@@ -216,6 +216,8 @@ public class Drivetrain extends SubsystemBase {
     return sysIdTunning;
   }
 
+/*
+
   public Command sysIdQuasistatic(SysIdRoutine.Direction direction) {
     return this.sysIdTunning.sysIdQuasistatic(direction);
   }
@@ -223,6 +225,8 @@ public class Drivetrain extends SubsystemBase {
   public Command sysIdDynamic(SysIdRoutine.Direction direction) {
     return this.sysIdTunning.sysIdDynamic(direction);
   }
+
+  */
   
 
   @Override

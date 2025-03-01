@@ -25,7 +25,9 @@ import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 
 public class DrivetrainSysIdTuning {
 
-  private final MutVoltage appliedVoltage = null;
+  /* 
+
+  private final MutVoltage appliedVoltage = Volts;
   private final MutDistance measureDistance = null;
   private final MutLinearVelocity measureVelocity = null;
 
@@ -94,5 +96,7 @@ public class DrivetrainSysIdTuning {
   public Command sysIdDynamic(SysIdRoutine.Direction direction) {
     return sysIdRoutine.dynamic(direction);
   }
+
+*/
 
 }
